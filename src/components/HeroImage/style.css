@@ -1,0 +1,7 @@
+.jumbotron {
+	background-image: linear-gradient(to top, rgba(0, 255, 255, 0), #212529),url("https://unsplash.com/photos/m_HRfLhgABo");
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 100vh;
+	width: 100vw;
+}
