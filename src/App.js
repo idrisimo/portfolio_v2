@@ -1,10 +1,11 @@
 import React from 'react';
-import { HeroImage } from './components/HeroImage';
+import { HeroImage, NavBar } from './components';
 import './styles/App.css';
 
 function App() {
   return (
     <div className="App">
+      <NavBar/>
       <section id='Landing'>
         <HeroImage/>
       </section>
