@@ -1,7 +1,15 @@
 .jumbotron {
-	background-image: linear-gradient(to top, rgba(0, 255, 255, 0), #212529),url("https://unsplash.com/photos/m_HRfLhgABo");
 	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 100vh;
+	background-color: black;
+}
+
+/* .jumbotron {
+	background-image: linear-gradient(to top, rgba(255, 255, 255, 0), #212529),url("../../assets/images/nasa.jpg");
+	background-size: contain;
 	background-repeat: no-repeat;
 	height: 100vh;
 	width: 100vw;
-}
+} */
