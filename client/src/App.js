@@ -1,16 +1,26 @@
-import React, { useRef } from 'react';
-import { HeroImage, NavBar } from './components';
+import React, { useRef, useEffect } from 'react';
+
+import { HeroImage, NavBar, SpacemanImage } from './components';
+import { AboutPage, ProjectsPage } from './pages';
 import './styles/App.css';
 import { Parallax, ParallaxLayer } from '@react-spring/parallax'
+
 import moonImage from './assets/images/moonImageReversed.jpg'
 import earthImage from './assets/images/spacetoearth.jpg'
-import spacemanImage from './assets/images/astronaut.png'
+
 
 function App() {
   const ref = useRef()
+  const scrollCheck = (e) => {
+    let element = e.target
+    console.log(window.scrollY)
+  }
+
   return (
     <div className="App">
+
       <Parallax pages={4} ref={ref}>
+
         <NavBar />
         <ParallaxLayer offset={0} factor={2} style={
           {
@@ -25,33 +35,35 @@ function App() {
           }
         }></ParallaxLayer>
 
-        <ParallaxLayer sticky={{ start: 0.2, end: 3.5 }} style={{ textAlign: 'right', }}>
-          <img src={spacemanImage} style={{width:'100px'}} />
+        <ParallaxLayer sticky={{ start: 0.4, end: 2.5 }} style={{ textAlign: 'right',  width: '10%', height:'10%'}}>
+          <SpacemanImage />
         </ParallaxLayer>
 
-        <ParallaxLayer offset={0.1} speed={2.5} onClick={() => ref.current.scrollTo(3)}>
+
+        <ParallaxLayer offset={0.1} speed={0.05}>
           <section className='text-light' id='Landing'>
-            <h2>Landing</h2>
+            <HeroImage />
           </section>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={1.1}>
+        <ParallaxLayer offset={1.1} speed={0.5}>
           <section className='text-light' id='About'>
-            <h2>About</h2>
+            <AboutPage/>
           </section>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={2.1}>
-          <section className='text-light' id='Projects'>
-            <h2>Projects</h2>
+        <ParallaxLayer offset={2.1} speed={0.5}>
+          <section className='text-light container' id='Projects'>
+            <ProjectsPage/>
           </section>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={3.1}>
+        <ParallaxLayer offset={3.1} speed={0.5}>
           <section className='text-light' id='Contact'>
             <h2>Contact</h2>
           </section>
         </ParallaxLayer>
+
       </Parallax>
     </div>
   );
