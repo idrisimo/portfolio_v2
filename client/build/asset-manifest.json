@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/static/css/main.544cc3bc.css",
+    "main.js": "/static/js/main.56fbdacd.js",
+    "static/js/787.a2cb61a6.chunk.js": "/static/js/787.a2cb61a6.chunk.js",
+    "static/media/spacetoearth.jpg": "/static/media/spacetoearth.372b35ef5ac2c31fb6e7.jpg",
+    "static/media/moonImageReversed.jpg": "/static/media/moonImageReversed.eb0e658bb3af507cfb74.jpg",
+    "static/media/moonImage.jpg": "/static/media/moonImage.7137d4ac7133ea5f18fc.jpg",
+    "static/media/astronaut.png": "/static/media/astronaut.114a2457da06a426d386.png",
+    "index.html": "/index.html",
+    "main.544cc3bc.css.map": "/static/css/main.544cc3bc.css.map",
+    "main.56fbdacd.js.map": "/static/js/main.56fbdacd.js.map",
+    "787.a2cb61a6.chunk.js.map": "/static/js/787.a2cb61a6.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.544cc3bc.css",
+    "static/js/main.56fbdacd.js"
+  ]
+}
