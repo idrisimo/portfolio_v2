@@ -9,7 +9,6 @@ from .serializers import ProjectsSerializer
 
 @api_view(['GET'])
 def get_projectsAPI(request):
-    
     projects = Projects.objects.all()
     serializer = ProjectsSerializer(projects, many=True)
     return Response(serializer.data)
