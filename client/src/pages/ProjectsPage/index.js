@@ -16,12 +16,8 @@ export const ProjectsPage = () => {
     const getProjectData = async () => {
         try {
             const url = 'http://127.0.0.1:8000/'
-            const resp = await axios.get(url, {
-                headers:{
-                    'Access-Control-Allow-Origin': '*'
-                }
-            })
-            // setProjects(resp.data)
+            const resp = await axios.get(url)
+            setProjects(resp.data)
             console.log(resp.data)
         } catch (err) {
             console.log(err)
@@ -38,10 +34,10 @@ export const ProjectsPage = () => {
             console.log(err)
         }
     }
+
     // useEffect(()=>{searchRepos()},[])
     useEffect(()=>{
         getProjectData()
-        console.log(projects)
     },[])
 
 
@@ -49,8 +45,11 @@ export const ProjectsPage = () => {
         <>
         <h2>Projects</h2>
         <div className='row row-cols-1 row-cols-md-2 g-4'>
-            {projectDetailsList.map(projectDetails => (
+            {/* {projectDetailsList.map(projectDetails => (
                 <ProjectCard key={projectDetails['id']} project={projectDetails}/>
+            ))} */}
+            {projects.map(project => (
+                <ProjectCard key={project['title']} project={project}/>
             ))}
         </div>
         </>

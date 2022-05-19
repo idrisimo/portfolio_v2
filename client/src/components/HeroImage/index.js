@@ -15,7 +15,7 @@ export const HeroImage = () => {
                 <p>Software Developer</p>
                 <hr></hr>
                 <Button className='mx-2'>Projects</Button>
-                <Button>Resume</Button>
+                <Button className='mx-2'>Resume</Button>
             </div>
         </div>
     )

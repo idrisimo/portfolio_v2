@@ -20,7 +20,6 @@ function App() {
     <div className="App">
 
       <Parallax pages={4} ref={ref}>
-
         <NavBar />
         <ParallaxLayer offset={0} factor={2} style={
           {
