@@ -11,4 +11,5 @@ from .serializers import ProjectsSerializer
 def get_projectsAPI(request):
     projects = Projects.objects.all()
     serializer = ProjectsSerializer(projects, many=True)
+    print('test')
     return Response(serializer.data)
