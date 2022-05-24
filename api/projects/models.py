@@ -1,4 +1,5 @@
 from django.db import models
+from techstack.models import Techstack
 
 # Create your models here.
 class Projects(models.Model):
@@ -6,7 +7,7 @@ class Projects(models.Model):
     overview = models.TextField(max_length=200, null=True, blank=True)
     project_difficulties = models.TextField(null=True, blank=True)
     project_solutions =  models.TextField(null=True, blank=True)
-    technology = models.CharField(max_length=200)
+    technology = models.ManyToManyField(Techstack)
     image_path = models.CharField(max_length=100, null=True, blank=True)
     s3_image_path = models.URLField(max_length=200, null=True, blank=True)
     project_link = models.URLField(max_length=200, null=True, blank=True)

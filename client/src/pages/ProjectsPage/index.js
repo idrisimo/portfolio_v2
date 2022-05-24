@@ -7,12 +7,20 @@ export const ProjectsPage = ({techstacksList}) => {
     // const [repos, setRepos] = useState([])
     const [projects, setProjects] = useState([])
 
-
     // const handleProjectData = () => {
     //     setProjectDetailsList([{'id':0, 'title': 'Project 1', 'project_overview':'This is a test', 'url': 'google.com', 'tech_stack': ['test1', 'test2']}, {'id':1, 'title': 'Project 2', 'project_overview':'This is a test', 'url': 'google.com', 'tech_stack': ['test1', 'test2']}])
     // }
 
     // useEffect(()=>{handleProjectData()},[])
+
+    const getProjectBadge = (projects, techstacksList) => {
+        for (let i = 0; i < projects.length; i++) {
+            
+            for (let n = 0; n < techstacksList.length; n++) {
+                
+            }
+        }
+    }
 
     const getProjectData = async () => {
         try {
