@@ -15,7 +15,7 @@ export const ProjectsPage = () => {
 
     const getProjectData = async () => {
         try {
-            const url = 'http://127.0.0.1:8000/'
+            const url = 'https://idrissilva-portfolio.netlify.app/'
             const resp = await axios.get(url)
             setProjects(resp.data)
             console.log(resp.data)
