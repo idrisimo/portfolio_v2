@@ -8,7 +8,7 @@ export const AboutPage = () => {
 
     const getTechStack = async () => {
         try {
-            const url = 'https://idrissilva-portfolio-v2.herokuapp.com/techstacks'
+            const url = 'https://idrissilva-portfolio-v2.herokuapp.com/techstack'
             const resp = await axios.get(url)
             setTechstackList(resp.data)
         } catch (err) {
