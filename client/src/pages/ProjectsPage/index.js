@@ -16,7 +16,7 @@ export const ProjectsPage = () => {
     const getProjectData = async () => {
         try {
             console.log('getting backend data')
-            const url = 'https://idrissilva-portfolio.netlify.app/'
+            const url = 'https://idrissilva-portfolio-v2.herokuapp.com/'
             const resp = await axios.get(url)
             console.log(resp.data)
             setProjects(resp.data)
