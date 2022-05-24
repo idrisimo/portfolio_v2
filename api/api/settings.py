@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     
     # Custom
     'projects',
+    'techstack',
     
     # Third Party
     'rest_framework',

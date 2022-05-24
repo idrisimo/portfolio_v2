@@ -1,8 +1,7 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card'
 import { Accordion, Button } from 'react-bootstrap'
-import moonImage from '../../assets/images/moonImage.jpg'
-// import imagePath from '../../assets/images'
+
 export const ProjectCard = ({ project }) => {
 
     const imagePath = 'http://localhost:8080/assets/images/'

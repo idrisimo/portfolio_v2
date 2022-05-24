@@ -1,6 +1,24 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { TechStackDisplay } from '../../components'
+import axios from 'axios'
 
 export const AboutPage = () => {
+
+    const [techstacksList, setTechstackList] = useState([])
+
+    const getTechStack = async () => {
+        try {
+            const url = 'https://idrissilva-portfolio-v2.herokuapp.com/techstacks'
+            const resp = await axios.get(url)
+            setTechstackList(resp.data)
+        } catch (err) {
+            console.log(err)
+        }
+    }
+
+    useEffect(()=>{
+        getTechStack()
+    },[])
 
     return (
         <>
@@ -15,6 +33,9 @@ export const AboutPage = () => {
                     A Full stack engineer with a passion for all things tech.
                 </p>
             </div>
+        </div>
+        <div className='row'>
+        <TechStackDisplay techStack={techstacksList}/>
         </div>
         </>
     )
