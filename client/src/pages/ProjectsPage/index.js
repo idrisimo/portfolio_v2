@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import {ProjectCard} from '../../components'
 import axios from 'axios'
 
-export const ProjectsPage = () => {
+export const ProjectsPage = ({techstacksList}) => {
     // const [projectDetailsList, setProjectDetailsList] = useState([])
     // const [repos, setRepos] = useState([])
     const [projects, setProjects] = useState([])
@@ -16,7 +16,7 @@ export const ProjectsPage = () => {
 
     const getProjectData = async () => {
         try {
-            const url = 'https://idrissilva-portfolio-v2.herokuapp.com/projects'
+            const url = 'https://idrissilva-portfolio-v2.herokuapp.com/projects/'
             const resp = await axios.get(url)
             setProjects(resp.data)
         } catch (err) {

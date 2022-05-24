@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 
 import { HeroImage, NavBar, SpacemanImage } from './components';
 import { AboutPage, ProjectsPage } from './pages';
@@ -8,13 +8,33 @@ import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 import moonImage from './assets/images/moonImageReversed.jpg'
 import earthImage from './assets/images/spacetoearth.jpg'
 
+import axios from 'axios'
 
 function App() {
+
+
+  const [techstacksList, setTechstackList] = useState([])
+
+  const getTechStack = async () => {
+      try {
+          const url = 'https://idrissilva-portfolio-v2.herokuapp.com/techstack/'
+          const resp = await axios.get(url)
+          setTechstackList(resp.data)
+      } catch (err) {
+          console.log(err)
+      }
+  }
+
+  useEffect(()=>{
+      getTechStack()
+  },[])
+
   const ref = useRef()
   const scrollCheck = (e) => {
     let element = e.target
     console.log(window.scrollY)
   }
+  
 
   return (
     <div className="App">
@@ -46,14 +66,14 @@ function App() {
         </ParallaxLayer>
 
         <ParallaxLayer offset={1.1} speed={0.5}>
-          <section className='text-light' id='About'>
-            <AboutPage/>
+          <section className='text-light container' id='About'>
+            <AboutPage techstacksList={techstacksList} />
           </section>
         </ParallaxLayer>
 
         <ParallaxLayer offset={2.1} speed={0.5}>
           <section className='text-light container' id='Projects'>
-            <ProjectsPage/>
+            <ProjectsPage techstacksList={techstacksList} />
           </section>
         </ParallaxLayer>
 

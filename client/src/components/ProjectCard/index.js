@@ -4,8 +4,8 @@ import { Accordion, Button } from 'react-bootstrap'
 
 export const ProjectCard = ({ project }) => {
 
-    const imagePath = 'http://localhost:8080/assets/images/'
-    console.log(`${imagePath}${project['image_path']}`)
+    // const imagePath = 'http://localhost:8080/assets/images/'
+    // console.log(`${imagePath}${project['image_path']}`)
     return (
         <div className='col'>
             <Accordion flush>
