@@ -12,7 +12,6 @@ import axios from 'axios'
 
 function App() {
 
-
   const [techstacksList, setTechstackList] = useState([])
 
   const getTechStack = async () => {
@@ -28,11 +27,6 @@ function App() {
   useEffect(()=>{
       getTechStack()
   },[])
-
-
-
-
-
   
   const ref = useRef()
   const scrollCheck = (e) => {

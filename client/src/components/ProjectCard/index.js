@@ -16,7 +16,6 @@ export const ProjectCard = ({ project }) => {
                         </Accordion.Header>
                         <Accordion.Body >
                             <Card.Text>{project['overview']}</Card.Text>
-                            {/* <Card.Text>{project['technology']}</Card.Text> */}
                             {project['technology'].map(tech=>(
                                 <img key={tech['tech_name']} src={tech['sm_badge_url']}/>
                             ))}
