@@ -14,7 +14,7 @@ export const AboutPage = ({ techstacksList }) => {
                     <img src='#' />
                 </div>
                 <div className='col-8'>
-                    <Card className='shadow' style={{ backgroundColor: 'rgba(0, 0, 0, .30)', backdropFilter: 'blur(50px)' }}>
+                    <Card className='shadow' style={{ backgroundColor: 'rgba(0, 0, 0, .70)', backdropFilter: 'blur(50px)' }}>
                         <Card.Text>
                             I have always had an interest in computers - in what they can do and the possibilities that they offer. Whilst I
                             had dabbled with coding throughout the years it was only in 2020 that I decided to take the plunge, at which

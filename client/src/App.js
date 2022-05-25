@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
-
+import { Navbar, Container, Nav } from 'react-bootstrap/'
 import { HeroImage, NavBar, SpacemanImage } from './components';
 import { AboutPage, ProjectsPage } from './pages';
 import './styles/App.css';
@@ -11,7 +11,7 @@ import earthImage from './assets/images/spacetoearth.jpg'
 import axios from 'axios'
 
 function App() {
-
+  const ref = useRef()
   const [techstacksList, setTechstackList] = useState([])
 
   const getTechStack = async () => {
@@ -28,18 +28,32 @@ function App() {
       getTechStack()
   },[])
   
-  const ref = useRef()
-  const scrollCheck = (e) => {
-    let element = e.target
-    console.log(window.scrollY)
+
+  const scroll = (to) => {
+    if (ref.current) {
+      ref.current.scrollTo(to)
+    }
   }
-  
 
   return (
     <div className="App">
 
       <Parallax pages={4} ref={ref}>
-        <NavBar />
+        {/* <NavBar ref={scroll} /> */}
+        <Navbar bg='dark' variant="dark" expand='lg' sticky="top">
+            <Container>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="me-auto">
+                        <Nav.Link href="#"onClick={()=>scroll(0)}>Home</Nav.Link>
+                        <Nav.Link href="#" onClick={()=>scroll(1)}>About</Nav.Link>
+                        <Nav.Link href="#" onClick={()=>scroll(2)}>Projects</Nav.Link>
+                        <Nav.Link href="#" onClick={()=>scroll(3)}>Contact</Nav.Link>                       
+                    </Nav>
+                </Navbar.Collapse>
+            </Container>
+        </Navbar>
+
         <ParallaxLayer offset={0} factor={2} style={
           {
             backgroundImage: `linear-gradient(to bottom, #212529, rgba(0,0,0,0)),url(${moonImage})`,
@@ -53,7 +67,7 @@ function App() {
           }
         }></ParallaxLayer>
 
-        <ParallaxLayer sticky={{ start: 0.4, end: 2.5 }} style={{ textAlign: 'right',  width: '10%', height:'10%'}}>
+        <ParallaxLayer sticky={{ start: 0.7, end: 2.5 }} style={{ textAlign: 'right',  width: '10%', height:'10%'}}>
           <SpacemanImage />
         </ParallaxLayer>
 
