@@ -29,6 +29,11 @@ function App() {
       getTechStack()
   },[])
 
+
+
+
+
+  
   const ref = useRef()
   const scrollCheck = (e) => {
     let element = e.target

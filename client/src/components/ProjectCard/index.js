@@ -4,8 +4,7 @@ import { Accordion, Button } from 'react-bootstrap'
 
 export const ProjectCard = ({ project }) => {
 
-    // const imagePath = 'http://localhost:8080/assets/images/'
-    // console.log(`${imagePath}${project['image_path']}`)
+
     return (
         <div className='col'>
             <Accordion flush>
@@ -17,7 +16,10 @@ export const ProjectCard = ({ project }) => {
                         </Accordion.Header>
                         <Accordion.Body >
                             <Card.Text>{project['overview']}</Card.Text>
-                            <Card.Text>{project['technology']}</Card.Text>
+                            {/* <Card.Text>{project['technology']}</Card.Text> */}
+                            {project['technology'].map(tech=>(
+                                <img key={tech['tech_name']} src={tech['sm_badge_url']}/>
+                            ))}
                         </Accordion.Body>
                     </Card.Body>
                     <Card.Footer>
