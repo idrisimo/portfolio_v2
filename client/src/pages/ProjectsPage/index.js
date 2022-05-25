@@ -25,8 +25,8 @@ export const ProjectsPage = ({techstacksList}) => {
 
     const getProjectData = async () => {
         try {
-            // const url = 'https://idrissilva-portfolio-v2.herokuapp.com/projects/'
-            const url = 'http://127.0.0.1:8000/projects/'
+            const url = 'https://idrissilva-portfolio-v2.herokuapp.com/projects/'
+            // const url = 'http://127.0.0.1:8000/projects/'
             const resp = await axios.get(url)
             // console.log(resp.data)
             const projectData = resp.data
