@@ -14,7 +14,7 @@ export const HeroImage = () => {
                 <h1 className='display-3 pt-5'>Idris Silva</h1>
                 <p className='lead'>Software Developer</p>
                 <hr></hr>
-                <Button className='mx-2'>Resume</Button>
+                <Button className='mx-2 shadow' href='https://idrissilva-portfolio-v2.s3.eu-west-2.amazonaws.com/Idris_Silva_fp_cv.pdf' target="_blank" rel="noopener noreferrer" >Resume</Button>
             </div>
         </div>
     )
