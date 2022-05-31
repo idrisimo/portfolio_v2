@@ -12,9 +12,8 @@ export const HeroImage = () => {
         <div>
             <div className='container text-light text-start'>
                 <h1 className='display-3 pt-5'>Idris Silva</h1>
-                <p>Software Developer</p>
+                <p className='lead'>Software Developer</p>
                 <hr></hr>
-                <Button className='mx-2'>Projects</Button>
                 <Button className='mx-2'>Resume</Button>
             </div>
         </div>

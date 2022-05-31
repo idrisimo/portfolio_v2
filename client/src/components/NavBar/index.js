@@ -18,7 +18,6 @@ export const NavBar = () => {
                         {/* <Link to='#About'>About</Link>
                         <Link to='#Projects'>Projects</Link>
                         <Link to='#Contact'>Contact</Link> */}
-                        
                     </Nav>
                 </Navbar.Collapse>
             </Container>

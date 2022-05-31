@@ -7,11 +7,11 @@ export const AboutPage = ({ techstacksList }) => {
 
     return (
         <>
-            <h2>About</h2>
+            <h1 className='display-3 pb-5'>About</h1>
 
             <div className='row mb-5 pb-5'>
                 <div className='col'>
-                    <img src='#' />
+                    <img width="400" height="400" src='https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?cs=srgb&dl=pexels-kevin-ku-577585.jpg&fm=jpg' />
                 </div>
                 <div className='col-8'>
                     <Card className='shadow' style={{ backgroundColor: 'rgba(0, 0, 0, .70)', backdropFilter: 'blur(50px)' }}>

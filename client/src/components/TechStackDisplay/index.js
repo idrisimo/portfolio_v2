@@ -14,7 +14,6 @@ export const TechStackDisplay = ({ techStack }) => {
                                 <img src={tech['lg_badge_url']} height="100px" />
                             </Col> : null
                     ))}
-
                 </Row>
             </Card>
         </Container>

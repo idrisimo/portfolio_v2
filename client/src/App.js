@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { Navbar, Container, Nav } from 'react-bootstrap/'
 import { HeroImage, NavBar, SpacemanImage } from './components';
-import { AboutPage, ProjectsPage } from './pages';
+import { AboutPage, ContactPage, ProjectsPage } from './pages';
 import './styles/App.css';
 import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 
@@ -91,8 +91,8 @@ function App() {
         </ParallaxLayer>
 
         <ParallaxLayer offset={3.1} speed={0.5}>
-          <section className='text-light' id='Contact'>
-            <h2>Contact</h2>
+          <section className='text-light container' id='Contact'>
+            <ContactPage/>
           </section>
         </ParallaxLayer>
 
