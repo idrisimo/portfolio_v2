@@ -22,8 +22,8 @@ export const ProjectCard = ({ project }) => {
                         </Accordion.Body>
                     </Card.Body>
                     <Card.Footer>
-                        <Button className='btn-secondary mx-2' href={project['project_link']}>Project</Button>
-                        <Button className='btn-dark mx-2' href={project['github_link']}>Github</Button>
+                        <Button className='btn-secondary mx-2 shadow' href={project['project_link']}>Project</Button>
+                        <Button className='btn-dark mx-2 shadow' href={project['github_link']}>Github</Button>
                     </Card.Footer>
                 </Card>
             </Accordion>
