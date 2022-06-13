@@ -64,7 +64,7 @@ function App() {
       <header>
         <NavBar />
       </header>
-      <main className='container-fluid'>
+      <main className='container'>
         <ParallaxProvider>
           <section className='text-light' id='Landing'>
             <Parallax speed={-30}>

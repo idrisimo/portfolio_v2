@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { TechStackDisplay } from '../../components'
 import axios from 'axios'
-import { Card } from 'react-bootstrap'
+import { Card, Row, Col } from 'react-bootstrap'
 import '../../styles/App.css'
 export const AboutPage = ({ techstacksList }) => {
 
@@ -15,7 +15,7 @@ export const AboutPage = ({ techstacksList }) => {
                 </div>
                 <div className='col'>
                     <Card className='shadow border-white glassPanel text-start'>
-                        <Card.Text className='px-3 py-3'>
+                        <Card.Text className='p-3'>
                             I have always had an interest in computers - in what they can do and the possibilities that they offer. Whilst I
                             had dabbled with coding throughout the years it was only in 2020 that I decided to take the plunge, at which
                             point I absolutely loved it. The more I delved into coding the more I became fascinated with the way problems
@@ -33,7 +33,7 @@ export const AboutPage = ({ techstacksList }) => {
                     </Card>
                 </div>
             </div>
-            <div className='row'>
+            <div className='row row-cols-1 row-cols-md-2 g-2'>
                 <TechStackDisplay techStack={techstacksList} />
             </div>
         </>
