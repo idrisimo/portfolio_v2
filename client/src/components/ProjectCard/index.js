@@ -1,7 +1,7 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card'
 import { Accordion, Button } from 'react-bootstrap'
-
+import '../../styles/App.css'
 export const ProjectCard = ({ project }) => {
 
 
@@ -9,7 +9,7 @@ export const ProjectCard = ({ project }) => {
         <div className='col'>
             <Accordion flush>
                 <Card className='shadow h-100 text-dark'>
-                    <Card.Img variant="top" src={project['s3_image_path']} alt="Image not found" />
+                    <Card.Img className='' variant="top" src={project['s3_image_path']} alt="Image not found" />
                     <Card.Body>
                         <Accordion.Header>
                             <Card.Title>{project['title']}</Card.Title>

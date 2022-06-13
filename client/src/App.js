@@ -3,100 +3,98 @@ import { Navbar, Container, Nav } from 'react-bootstrap/'
 import { HeroImage, NavBar, SpacemanImage } from './components';
 import { AboutPage, ContactPage, ProjectsPage } from './pages';
 import './styles/App.css';
-import { Parallax, ParallaxLayer } from '@react-spring/parallax'
+// import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 
 import moonImage from './assets/images/moonImageReversed.jpg'
 import earthImage from './assets/images/spacetoearth.jpg'
 
 import axios from 'axios'
+import { ParallaxBanner, Parallax, ParallaxProvider } from 'react-scroll-parallax';
 
 function App() {
   const ref = useRef()
   const [techstacksList, setTechstackList] = useState([])
 
   const getTechStack = async () => {
-      try {
-          const url = 'https://idrissilva-portfolio-v2.herokuapp.com/techstack/'
-          const resp = await axios.get(url)
-          setTechstackList(resp.data)
-      } catch (err) {
-          console.log(err)
-      }
-  }
-
-  useEffect(()=>{
-      getTechStack()
-  },[])
-  
-
-  const scroll = (to) => {
-    if (ref.current) {
-      ref.current.scrollTo(to)
+    try {
+      const url = 'https://idrissilva-portfolio-v2.herokuapp.com/techstack/'
+      const resp = await axios.get(url)
+      setTechstackList(resp.data)
+    } catch (err) {
+      console.log(err)
     }
   }
 
+  useEffect(() => {
+    getTechStack()
+  }, [])
+
+
+
+  // const scroll = (to) => {
+  //   if (ref.current) {
+  //     ref.current.scrollTo(to)
+  //   }
+  // }
+
+  // const snapScroll = () => {
+  //   console.log('scrolling')
+  //   const scrollTopVal = document.documentElement.scrollTop
+  //   let lastScrollTop = 0;
+  //   console.log(scrollTopVal, "/", lastScrollTop)
+  //   if (scrollTopVal > lastScrollTop) {
+  //     // scroll(ref.current + 1)
+  //     console.log('downscroll')
+  //   } else {
+  //     // scroll(ref.current - 1)
+  //     console.log('upscroll')
+  //   }
+  //   lastScrollTop = scrollTopVal <= 0 ? 0 : scrollTopVal
+  //   setY(window.scrollY)
+  // }
+
   return (
-    <div className="App">
-
-      <Parallax pages={4} ref={ref}>
-        {/* <NavBar ref={scroll} /> */}
-        <Navbar bg='dark' variant="dark" expand='lg' sticky="top">
-            <Container>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="me-auto">
-                        <Nav.Link className='active' href="#"onClick={()=>scroll(0)}>Home</Nav.Link>
-                        <Nav.Link className='active' href="#" onClick={()=>scroll(1)}>About</Nav.Link>
-                        <Nav.Link className='active' href="#" onClick={()=>scroll(2)}>Projects</Nav.Link>
-                        <Nav.Link className='active' href="#" onClick={()=>scroll(3)}>Contact</Nav.Link>                       
-                    </Nav>
-                </Navbar.Collapse>
-            </Container>
-        </Navbar>
-
-        <ParallaxLayer offset={0} factor={2} style={
-          {
-            backgroundImage: `linear-gradient(to bottom, #212529, rgba(0,0,0,0)),url(${moonImage})`,
-            backgroundSize: 'cover',
-          }
-        }></ParallaxLayer>
-        <ParallaxLayer offset={2} factor={2} style={
-          {
-            backgroundImage: `linear-gradient(to bottom, #010101 30%, rgba(0,0,0,0) 70%),url(${earthImage})`,
-            backgroundSize: 'cover',
-          }
-        }></ParallaxLayer>
-
-        <ParallaxLayer sticky={{ start: 0.7, end: 2.5 }} style={{ textAlign: 'right',  width: '10%', height:'10%'}}>
-          <SpacemanImage />
-        </ParallaxLayer>
-
-
-        <ParallaxLayer offset={0.1} speed={0.05}>
+    <div className="App" style={
+      {
+        backgroundPosition: 'center',
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundImage: `linear-gradient(to bottom, #212529 1%, rgba(0,0,0,0) 99%), url(${earthImage})`
+      }}>
+      <header>
+        <NavBar />
+      </header>
+      <main className='container-fluid'>
+        <ParallaxProvider>
           <section className='text-light' id='Landing'>
-            <HeroImage />
+            <Parallax speed={-30}>
+              <HeroImage />
+            </Parallax>
           </section>
-        </ParallaxLayer>
 
-        <ParallaxLayer offset={1.1} speed={0.5}>
-          <section className='text-light container' id='About'>
-            <AboutPage techstacksList={techstacksList} />
+
+          <section className='text-light' id='About' >
+            <Parallax speed={30}>
+              <AboutPage techstacksList={techstacksList} />
+            </Parallax>
           </section>
-        </ParallaxLayer>
 
-        <ParallaxLayer offset={2.1} speed={0.5}>
-          <section className='text-light container' id='Projects'>
-            <ProjectsPage techstacksList={techstacksList} />
+
+          <section className='text-light' id='Projects' >
+            <Parallax speed={30}>
+              <ProjectsPage techstacksList={techstacksList} />
+            </Parallax>
           </section>
-        </ParallaxLayer>
 
-        <ParallaxLayer offset={3.1} speed={0.5}>
-          <section className='text-light container' id='Contact'>
-            <ContactPage/>
+
+          <section className='text-light' id='Contact' >
+            <Parallax speed={30}>
+              <ContactPage />
+            </Parallax>
           </section>
-        </ParallaxLayer>
 
-      </Parallax>
+        </ParallaxProvider>
+      </main>
     </div>
   );
 }

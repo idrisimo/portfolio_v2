@@ -1,21 +1,21 @@
 import React from 'react'
 import { Card, Col, Container, Row } from 'react-bootstrap'
-
+import '../../styles/App.css'
 
 export const TechStackDisplay = ({ techStack }) => {
 
     return (
-        <Container className=''>
-            <Card className='shadow' style={{ backgroundColor: 'rgba(255, 255, 255, .30)', backdropFilter: 'blur(5px)'}}>
-                <Row xs={1} md={6} className="g-2">
+        
+            <Card className='shadow border-white glassPanel'>
+                <Row xs={3} md={6} className="g-2 p-5">
                     {techStack.map(tech => (
                         tech['lg_badge_url'] != null ?
                             <Col key={tech['tech_name']}>
-                                <img src={tech['lg_badge_url']} height="100px" />
+                                <img className='flexImg' src={tech['lg_badge_url']}/>
                             </Col> : null
                     ))}
                 </Row>
             </Card>
-        </Container>
+        
     )
 }
