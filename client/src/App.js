@@ -61,10 +61,10 @@ function App() {
         backgroundRepeat: "no-repeat",
         backgroundImage: `linear-gradient(to bottom, #212529 1%, rgba(0,0,0,0) 99%), url(${earthImage})`
       }}>
-      <header>
-        <NavBar />
-      </header>
+
+      <NavBar />
       <main className='container'>
+      
         <ParallaxProvider>
           <section className='text-light' id='Landing'>
             <Parallax speed={-30}>
