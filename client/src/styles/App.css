@@ -10,7 +10,7 @@
 }
 
 .flexImg {
-  max-width: 75%;
+  max-width: 50%;
   height: auto;
   width: auto\9;
 }
@@ -29,7 +29,7 @@ section {
 }
 
 #Projects {
-  margin-top: 30vh;
+  /* margin-top: 30vh; */
   height: 100vh;
 }
 

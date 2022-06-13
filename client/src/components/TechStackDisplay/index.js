@@ -6,8 +6,8 @@ export const TechStackDisplay = ({ techStack }) => {
 
     return (
         
-            <Card className='shadow border-white glassPanel'>
-                <Row xs={3} md={6} className="g-2 p-5">
+            <Card className='shadow border-white glassPanel w-75'>
+                <Row className="row-cols-4 row-cols-md-6 g-2 p-2">
                     {techStack.map(tech => (
                         tech['lg_badge_url'] != null ?
                             <Col key={tech['tech_name']}>

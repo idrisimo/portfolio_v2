@@ -7,9 +7,9 @@ export const ProjectCard = ({ project }) => {
 
     return (
         <div className='col'>
-            <Accordion flush>
-                <Card className='shadow h-100 text-dark'>
-                    <Card.Img className='' variant="top" src={project['s3_image_path']} alt="Image not found" />
+            <Accordion flush className=' d-flex justify-content-center'>
+                <Card className='shadow w-100 text-dark'>
+                    <Card.Img variant="top" src={project['s3_image_path']} alt="Image not found" />
                     <Card.Body>
                         <Accordion.Header>
                             <Card.Title>{project['title']}</Card.Title>

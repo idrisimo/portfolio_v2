@@ -50,8 +50,8 @@ export const ProjectsPage = ({techstacksList}) => {
 
     return (
         <>
-        <h2 className='display-3 pb-5 pt-5'>Projects</h2>
-        <div className='row row-cols-1 row-cols-md-2 g-4'>
+        <h2 className='display-3 py-5'>Projects</h2>
+        <div className='row row-cols-1 row-cols-md-3 g-4'>
             {updatedProjects.map(project => (
                 <ProjectCard key={project['title']} project={project}/>
             ))}
