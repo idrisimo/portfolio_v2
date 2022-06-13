@@ -25,11 +25,12 @@ section {
 }
 
 #About {
-  /* height:100vh */
+  /* height: 50vh; */
 }
 
 #Projects {
   margin-top: 30vh;
+  height: 100vh;
 }
 
 #Contact {
