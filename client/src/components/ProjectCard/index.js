@@ -16,14 +16,16 @@ export const ProjectCard = ({ project }) => {
                         </Accordion.Header>
                         <Accordion.Body >
                             <Card.Text>{project['overview']}</Card.Text>
-                            {project['technology'].map(tech=>(
-                                <img key={tech['tech_name']} src={tech['sm_badge_url']}/>
+                            {project['technology'].map(tech => (
+                                <img key={tech['tech_name']} src={tech['sm_badge_url']} />
                             ))}
                         </Accordion.Body>
                     </Card.Body>
                     <Card.Footer>
-                        <Button className='btn-secondary mx-2 shadow' href={project['project_link']}>Project</Button>
-                        <Button className='btn-dark mx-2 shadow' href={project['github_link']}>Github</Button>
+                        {project['project_link'] ?
+                            <Button className='btn-secondary mx-2 shadow' href={project['project_link']} target="_blank" rel="noopener noreferrer">Project</Button> : ''}
+
+                        <Button className='btn-dark mx-2 shadow' href={project['github_link']} target="_blank" rel="noopener noreferrer">Github</Button>
                     </Card.Footer>
                 </Card>
             </Accordion>
