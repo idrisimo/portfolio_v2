@@ -33,7 +33,7 @@ export const AboutPage = ({ techstacksList }) => {
                     </Card>
                 </div>
             </div>
-            <div className='row row-cols-1 row-cols-md-2 g-2'>
+            <div className='row row-cols-1 row-cols-md-1 g-2'>
                 <TechStackDisplay techStack={techstacksList} />
             </div>
         </>
