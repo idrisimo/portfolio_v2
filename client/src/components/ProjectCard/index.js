@@ -6,20 +6,22 @@ export const ProjectCard = ({ project }) => {
 
 
     return (
-        <div className='col'>
+        
             <Accordion flush className=' d-flex justify-content-center'>
-                <Card className='shadow w-100 text-dark'>
-                    <Card.Img variant="top" src={project['s3_image_path']} alt="Image not found" />
-                    <Card.Body>
+                <Card className='shadow w-100 text-dark rounded-0 '>
+                    <Card.Img className='projectCardImage img-thumbnail' variant="top" src={project['s3_image_path']} alt="Project Card Image" />
+                    <Card.Body >
+                        
                         <Accordion.Header>
                             <Card.Title>{project['title']}</Card.Title>
                         </Accordion.Header>
-                        <Accordion.Body >
+                        <Accordion.Body className='' >
                             <Card.Text>{project['overview']}</Card.Text>
                             {project['technology'].map(tech => (
                                 <img key={tech['tech_name']} src={tech['sm_badge_url']} />
                             ))}
                         </Accordion.Body>
+                        
                     </Card.Body>
                     <Card.Footer>
                         {project['project_link'] ?
@@ -29,7 +31,7 @@ export const ProjectCard = ({ project }) => {
                     </Card.Footer>
                 </Card>
             </Accordion>
-        </div>
+       
     )
 
 }

@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react'
-import {ProjectCard} from '../../components'
+import React, { useEffect, useState, useRef } from 'react'
+import { ProjectCard } from '../../components'
 import axios from 'axios'
+import { Button, Carousel, Row, Col, Container } from 'react-bootstrap'
 
-export const ProjectsPage = ({techstacksList}) => {
+export const ProjectsPage = ({ techstacksList }) => {
     const [projects, setProjects] = useState([])
     const [updatedProjects, setUpdatedProjects] = useState([])
 
@@ -15,7 +16,7 @@ export const ProjectsPage = ({techstacksList}) => {
 
             for (let n = 0; n < project['technology'].length; n++) {
                 const techNum = parseInt(project['technology'][n])
-                project['technology'][n] = techstacksList[techNum-1]
+                project['technology'][n] = techstacksList[techNum - 1]
             }
 
             return project
@@ -39,25 +40,58 @@ export const ProjectsPage = ({techstacksList}) => {
     }
 
 
-    useEffect(()=>{
+    useEffect(() => {
         getProjectData()
-    },[])
-    useEffect(()=>{
+    }, [])
+    useEffect(() => {
         getProjectBadge(projects, techstacksList)
 
-    },[projects])
+    }, [projects])
 
+
+    const ref = useRef(null);
+
+    const onPrevClick = () => {
+        ref.current.prev();
+    };
+    const onNextClick = () => {
+        ref.current.next();
+    };
 
     return (
         <>
-        <h2 className='display-3 py-5'>Projects</h2>
-        <div className='row row-cols-1 row-cols-md-3 g-4'>
+            <h2 className='display-3 py-5'>Projects</h2>
+
+            <Row className='g-0'>
+                <Col xs={2} className='d-flex align-items-stretch rounded-start '>
+                    <Button className='ms-auto rounded-0 rounded-start' variant='light' onClick={onPrevClick}>
+                    {'<'}
+                    </Button>
+                </Col>
+                <Col xs={8} >
+                    <Carousel controls={false} ref={ref} indicators={false} className='w-100' variant='dark'>
+                        {updatedProjects.map(project => (
+                            <Carousel.Item>
+                                <ProjectCard key={project['title']} project={project} />
+                            </Carousel.Item>
+
+                        ))}
+                    </Carousel>
+                </Col>
+                <Col xs={2} className='d-flex align-items-stretch'>
+                    <Button className='me-auto rounded-0 rounded-end' variant='light' onClick={onNextClick}>
+                        {'>'}
+                    </Button>
+                </Col>
+            </Row>
+
+            {/* <div className='row row-cols-1 row-cols-md-3 g-4'>
             {updatedProjects.map(project => (
                 <ProjectCard key={project['title']} project={project}/>
             ))}
-        </div>
+        </div> */}
         </>
     )
-    
+
 }
 
