@@ -14,6 +14,7 @@ export const NavBar = () => {
                         <Link className="nav-link" to='#About'>About</Link>
                         <Link className="nav-link" to='#Projects'>Projects</Link>
                         <Link className="nav-link" to='#Contact'>Contact</Link>
+                        
                     </Nav>
                 </Navbar.Collapse>
             </Container>
