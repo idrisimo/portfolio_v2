@@ -7,7 +7,7 @@ from rest_framework.response import Response
 from .models import Projects
 from .serializers import ProjectsSerializer
 
-from projectScripts import redditTopPosts as rtp
+from .projectScripts.redditTopPosts import RedditTopPosts
 
 @api_view(['GET'])
 def get_projectsAPI(request):
@@ -19,13 +19,15 @@ def get_projectsAPI(request):
 
 @api_view(['POST', 'GET'])
 def collect_reddit_data(request):
-    reddit = rtp.reddit_auth()
-    subRedditName_req = request.data
-    subRedditName = subRedditName_req['subRedditName']
-    request.session.save()
-
-    collect_reddit_data.subarray = rtp.reddit_data(reddit,subRedditName)
-    collect_reddit_data.subarray = rtp.subreddit_logo(reddit,subRedditName)
+    # reddit = rtp.reddit_auth()
+    
+    # subRedditName_req = request.data
+    # subRedditName = subRedditName_req['subRedditName']
+    # request.session.save()
+    rtp = RedditTopPosts(sub_name='learnpython')
+    print(rtp.reddit_data(300))
+    # collect_reddit_data.subarray = rtp.reddit_data(300)
+    # collect_reddit_data.subarray = rtp.subreddit_logo()
     return Response()
 
 @api_view(['POST', 'GET'])
