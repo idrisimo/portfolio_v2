@@ -21,7 +21,6 @@ function App() {
       <main className='container'>
         <Routes>
           <Route path='/' element={<PortfolioPage />} />
-
           <Route path='/reddit' element={<RedditProjectPage />} />
         </Routes>
       </main>
