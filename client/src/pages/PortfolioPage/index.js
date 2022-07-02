@@ -1,11 +1,9 @@
-import React, { useRef, useEffect, useState } from 'react';
-import { Navbar, Container, Nav, Spinner } from 'react-bootstrap/'
+import React, {useEffect, useState } from 'react';
+import { Spinner } from 'react-bootstrap/'
 import { HeroImage,} from '../../components';
 import { AboutPage, ContactPage, ProjectsPage } from '../../pages';
 import '../../styles/App.css';
-
-// import earthImage from '../../assets/images/spacetoearth.jpg'
-
+import earthImage from '../../assets/images/spacetoearth.jpg'
 import {Parallax, ParallaxProvider } from 'react-scroll-parallax';
 import useAxios from '../../hooks/useAxios';
 
@@ -29,31 +27,40 @@ export const PortfolioPage = () => {
   }, [response])
 
   return (
+    <div style={
+      {
+        backgroundPosition: 'center',
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundImage: `linear-gradient(to bottom, #212529 1%, rgba(0,0,0,0) 99%), url(${earthImage})`
+      }}>
+
         <ParallaxProvider>
-          <section className='text-light' id='Landing'>
+          <section className='text-light container' id='Landing'>
             <Parallax speed={-30}>
               <HeroImage />
             </Parallax>
           </section>
 
-          <section className='text-light' id='About' >
+          <section className='text-light container' id='About' >
             <Parallax speed={20}>
               {loading ? <Spinner animation='border' /> : <AboutPage techstacksList={techstacksList} />}
             </Parallax>
           </section>
 
-          <section className='text-light' id='Projects' >
+          <section className='text-light container' id='Projects' >
             <Parallax speed={20}>
               {loading ? <Spinner animation='border' /> : <ProjectsPage techstacksList={techstacksList} />}
             </Parallax>
           </section>
 
-          <section className='text-light' id='Contact' >
+          <section className='text-light container' id='Contact' >
             <Parallax speed={20}>
               <ContactPage />
             </Parallax>
           </section>
         </ParallaxProvider>
+        </div>
   );
 
 

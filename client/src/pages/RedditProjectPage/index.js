@@ -40,17 +40,19 @@ export const RedditProjectPage = () => {
   }, [response])
 
   return (
-    <>
-    <button onClick={()=>refetch()}>test</button>
-      <h1>reddit</h1>
+    <div className='container'>
+
+
+      <h1 className='display-3 pt-5'>Reddit Top Post analysis</h1>
+                <p className='lead'>Check the best time to post based when the top 500 posts of your choice where posted</p>
       <div className="row justify-content-center py-5">
-        <div className="card col-md-7 bg-white shadow text-white">
+        <div className="card col-md-7 bg-white shadow">
             <div className="card-body" id="form_wrap">
                 <form id="redditForm" onSubmit={handleForm}>
                     <div className="form-group text-center">
-                        <label id="subNameLabel" form="SubNameInput">Current subreddit selected: r/</label>
+                        <label id="subNameLabel" htmlFor="SubNameInput">Current subreddit selected: <b>r/{subRedditName}</b></label>
                         <input type="text" className="form-control" id="SubNameInput" placeholder="Enter your sub of choice" name="SubNameInput" required/>
-                        <button  onClick={()=>handleForm} id="formButton" type="submit" value="Submit" className="btn btn-warning">
+                        <button  onClick={()=>handleForm} id="formButton" type="submit" value="Submit" className="btn btn-secondary">
                             <span id="spinner"></span>
                             Submit
                         </button>
@@ -63,7 +65,7 @@ export const RedditProjectPage = () => {
 
       {loading ?
         <div>
-          <h2>Loading Reddit Data...</h2>
+          <h2>Loading Data from reddit...</h2>
           <Spinner animation='border' />
         </div>
         :
@@ -82,6 +84,6 @@ export const RedditProjectPage = () => {
           <RedditCalendar data={redditData} />
         </div>}
 
-    </>
+    </div>
   )
 }
