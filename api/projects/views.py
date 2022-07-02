@@ -27,5 +27,5 @@ def get_reddit_data(request):
    
     rtp = RedditTopPosts(sub_name=subRedditName)
 
-    Json_Item = {"subreddit_array": rtp.reddit_data(5), "subreddit_icon": rtp.subreddit_logo()}
+    Json_Item = {"subreddit_array": rtp.reddit_data(500), "subreddit_icon": rtp.subreddit_logo()}
     return Response(Json_Item)
