@@ -10,7 +10,7 @@ export const RedditCalendar = ({ data }) => {
     chart: {
       height: 350,
       type: 'heatmap',
-      background: '#fff'
+      background: '#ffffx`x``'
     },
     xaxis: {
       type: 'category',
@@ -58,7 +58,6 @@ export const RedditCalendar = ({ data }) => {
         weekData.push({ x: j, y: data[i][j] })
       }
       series.push({ name: DoW[i], data: weekData })
-      // series.push({name:DoW[i], data:data[i]})
     }
     console.log(series)
     setSeriesSate(series)
