@@ -7,7 +7,7 @@ export const ProjectCard = ({ project }) => {
 
     return (
         
-            <Accordion key={project['title']}flush className=' d-flex justify-content-center'>
+            <Accordion flush className=' d-flex justify-content-center'>
                 <Card  className='shadow w-100 text-dark rounded-0 '>
                     <Card.Img className='projectCardImage img-thumbnail' variant="top" src={project['s3_image_path']} alt="Project Card Image" />
                     <Card.Body >
