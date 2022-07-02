@@ -4,6 +4,7 @@ import '../../styles/App.css'
 // import ReactApexChart from 'apexcharts'
 import Chart from 'react-apexcharts'
 export const RedditCalendar = ({ data }) => {
+  // chart setup
   const [seriesState, setSeriesSate] = useState([])
 
   const options = {
@@ -31,25 +32,8 @@ export const RedditCalendar = ({ data }) => {
 
     }
   }
-  const dummyData = [{
-    name: 'Metric1',
-    data: [2, 0, 2, 4, 1, 0, 2, 0, 2, 2, 3, 0, 1, 2, 3, 3, 5, 2, 2, 1, 3, 4, 3, 3]
-  },
-  {
-    name: 'Metric2',
-    data: [2, 0, 2, 4, 1, 0, 2, 0, 2, 2, 3, 0, 1, 2, 3, 3, 5, 2, 2, 1, 3, 4, 3, 3]
-  },
-  {
-    name: 'Metric3',
-    data: [2, 0, 2, 4, 1, 0, 2, 0, 2, 2, 3, 0, 1, 2, 3, 3, 5, 2, 2, 1, 3, 4, 3, 3]
-  },
-  {
-    name: 'Metric4',
-    data: [2, 0, 2, 4, 1, 0, 2, 0, 2, 2, 3, 0, 1, 2, 3, 3, 5, 2, 2, 1, 3, 4, 3, 3]
-  }
-  ]
 
-  const seriesFormatter = () => {
+  const seriesFormatter = () => { // formats the xy axis
     let series = []
     const DoW = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
     for (let i = 0; i < data.length; i++) {
@@ -59,7 +43,7 @@ export const RedditCalendar = ({ data }) => {
       }
       series.push({ name: DoW[i], data: weekData })
     }
-    console.log(series)
+
     setSeriesSate(series)
   }
 
@@ -70,7 +54,7 @@ export const RedditCalendar = ({ data }) => {
     <>
 
       <div id="chart">
-        {/* <ReactApexChart type="heatmap" /> */}
+
         <Chart
           options={options}
           series={seriesState}

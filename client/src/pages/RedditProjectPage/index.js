@@ -10,8 +10,7 @@ export const RedditProjectPage = () => {
   const [subRedditName, setSubRedditName] = useState('learnPython')
   
 
-  
-  const { response, loading, error } = useAxios({
+  const { response, loading, error, refetch } = useAxios({
     method: 'POST',
     url: 'http://127.0.0.1:8000/projects/getredditdata/',
     headers: {
@@ -24,7 +23,8 @@ export const RedditProjectPage = () => {
     event.preventDefault();
     const subName =  event.target[0].value
     setSubRedditName(subName)
-    console.log(subRedditName)
+
+    refetch()
   }
 
   useEffect(() => {
@@ -37,10 +37,11 @@ export const RedditProjectPage = () => {
       }
 
     }
-  }, [response, subRedditName])
+  }, [response])
 
   return (
     <>
+    <button onClick={()=>refetch()}>test</button>
       <h1>reddit</h1>
       <div className="row justify-content-center py-5">
         <div className="card col-md-7 bg-white shadow text-white">
@@ -49,7 +50,7 @@ export const RedditProjectPage = () => {
                     <div className="form-group text-center">
                         <label id="subNameLabel" form="SubNameInput">Current subreddit selected: r/</label>
                         <input type="text" className="form-control" id="SubNameInput" placeholder="Enter your sub of choice" name="SubNameInput" required/>
-                        <button  id="formButton" type="submit" value="Submit" className="btn btn-warning">
+                        <button  onClick={()=>handleForm} id="formButton" type="submit" value="Submit" className="btn btn-warning">
                             <span id="spinner"></span>
                             Submit
                         </button>
@@ -67,6 +68,11 @@ export const RedditProjectPage = () => {
         </div>
         :
         <div>
+                  {error && (
+          <div>
+          <p>{error.message}</p>
+      </div>
+        )}
           <div className="row justify-content-center">
             <div className="col-md-2">
               <img id="iconID" width={200} className="rounded-circle imageStyle" src={subredditLogo}/>
