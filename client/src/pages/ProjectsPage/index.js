@@ -29,11 +29,9 @@ export const ProjectsPage = ({ techstacksList }) => {
             const url = 'https://idrissilva-portfolio-v2.herokuapp.com/projects/'
             // const url = 'http://127.0.0.1:8000/projects/'
             const resp = await axios.get(url)
-            // console.log(resp.data)
+
             const projectData = resp.data
             setProjects(projectData)
-            // getProjectBadge(projects, techstacksList)
-            // set
         } catch (err) {
             console.log(err)
         }
@@ -71,8 +69,8 @@ export const ProjectsPage = ({ techstacksList }) => {
                 <Col xs={8} >
                     <Carousel controls={false} ref={ref} indicators={false} className='w-100' variant='dark'>
                         {updatedProjects.map(project => (
-                            <Carousel.Item>
-                                <ProjectCard key={project['title']} project={project} />
+                            <Carousel.Item key={project['title']}>
+                                <ProjectCard project={project} />
                             </Carousel.Item>
 
                         ))}
@@ -84,12 +82,6 @@ export const ProjectsPage = ({ techstacksList }) => {
                     </Button>
                 </Col>
             </Row>
-
-            {/* <div className='row row-cols-1 row-cols-md-3 g-4'>
-            {updatedProjects.map(project => (
-                <ProjectCard key={project['title']} project={project}/>
-            ))}
-        </div> */}
         </>
     )
 
