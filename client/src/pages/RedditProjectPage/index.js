@@ -41,7 +41,7 @@ export const RedditProjectPage = () => {
 
   return (
     <div className='container'>
-
+      
 
       <h1 className='display-3 pt-5'>Reddit Top Post analysis</h1>
       <p className='lead'>Check the best time to post based when the top 500 posts of your choice where posted</p>
