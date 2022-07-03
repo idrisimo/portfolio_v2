@@ -9,10 +9,7 @@ const useAxios = (axiosParams) => {
     const [loading, setLoading] = useState(true);
     const [reload, setReload] = useState(0);
 
-    const refetch = () => setReload(prev => {
-        prev + 1;
-        setLoading(true);
-    })
+    const refetch = () => setReload(prev => {prev + 1,setLoading(true)})
 
     const fetchData = async (params) => {
         try {
