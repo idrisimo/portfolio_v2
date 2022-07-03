@@ -12,7 +12,7 @@ export const RedditProjectPage = () => {
 
   const { response, loading, error, refetch } = useAxios({
     method: 'POST',
-    url: 'https://idrissilva-portfolio-v2.herokuapp.com//projects/getredditdata/',
+    url: 'https://idrissilva-portfolio-v2.herokuapp.com/projects/getredditdata/',
     headers: {
       "Content-type": "application/json"
     },
