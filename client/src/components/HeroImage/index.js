@@ -1,8 +1,7 @@
 import React from 'react'
 import './style.css'
 import Button from 'react-bootstrap/Button'
-// import bgImage from '../../assets/images/nasa.jpg'
-import { Parallax } from 'react-scroll-parallax'
+
 export const HeroImage = () => {
     
     return (

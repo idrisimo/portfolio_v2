@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { TechStackDisplay } from '../../components'
-import axios from 'axios'
-import { Card, Row, Col } from 'react-bootstrap'
+
+import { Card} from 'react-bootstrap'
 import '../../styles/App.css'
 export const AboutPage = ({ techstacksList }) => {
 
@@ -11,7 +11,7 @@ export const AboutPage = ({ techstacksList }) => {
 
             <div className='row mb-5 pb-5 row-cols-1 row-cols-md-2 g-4'>
                 <div className='col'>
-                    <img className='flexImg' src='https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?cs=srgb&dl=pexels-kevin-ku-577585.jpg&fm=jpg' />
+                    <img className='flexImg' src='https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?cs=srgb&dl=pexels-kevin-ku-577585.jpg&fm=jpg' alt='image of glasses in front of a monitor' />
                 </div>
                 <div className='col'>
                     <Card className='shadow border-white glassPanel text-start'>

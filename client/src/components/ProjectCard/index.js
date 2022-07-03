@@ -4,7 +4,6 @@ import { Accordion, Button } from 'react-bootstrap'
 import '../../styles/App.css'
 export const ProjectCard = ({ project }) => {
 
-
     return (
         
             <Accordion flush className=' d-flex justify-content-center'>
@@ -18,7 +17,7 @@ export const ProjectCard = ({ project }) => {
                         <Accordion.Body className='' >
                             <Card.Text>{project['overview']}</Card.Text>
                             {project['technology'].map(tech => (
-                                <img key={tech['tech_name']} src={tech['sm_badge_url']} />
+                                <img key={tech['tech_name']} src={tech['sm_badge_url']} alt={`${tech['tech_name']} badge small`} />
                             ))}
                         </Accordion.Body>
                         

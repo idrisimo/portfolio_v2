@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 import '../../styles/App.css'
-import { Card, Col, Container, Row } from 'react-bootstrap'
+import { Card, Col, Row } from 'react-bootstrap'
 export const ContactPage = () => {
 
     return (

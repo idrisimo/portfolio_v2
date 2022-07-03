@@ -1,7 +1,6 @@
 import React from "react";
 import { Navbar, Container, Nav } from 'react-bootstrap/'
 import {HashLink as Link} from 'react-router-hash-link'
-import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 
 export const NavBar = () => {
     return (

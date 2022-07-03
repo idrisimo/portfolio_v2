@@ -1,13 +1,11 @@
 import React, { useEffect, useState, useRef } from 'react'
 import { ProjectCard } from '../../components'
 import axios from 'axios'
-import { Button, Carousel, Row, Col, Container } from 'react-bootstrap'
+import { Button, Carousel, Row, Col} from 'react-bootstrap'
 
 export const ProjectsPage = ({ techstacksList }) => {
     const [projects, setProjects] = useState([])
     const [updatedProjects, setUpdatedProjects] = useState([])
-
-
 
     const getProjectBadge = (projects, techstacksList) => {
 
@@ -41,9 +39,9 @@ export const ProjectsPage = ({ techstacksList }) => {
     useEffect(() => {
         getProjectData()
     }, [])
+
     useEffect(() => {
         getProjectBadge(projects, techstacksList)
-
     }, [projects])
 
 
