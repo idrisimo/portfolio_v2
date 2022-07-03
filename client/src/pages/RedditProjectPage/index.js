@@ -5,6 +5,11 @@ import useAxios from '../../hooks/useAxios'
 import { Spinner } from 'react-bootstrap'
 
 export const RedditProjectPage = () => {
+
+  useEffect(() => {
+    document.title = 'Idris Silva | When to Post on Reddit';
+  },[]);
+
   const [redditData, setRedditData] = useState([])
   const [subredditLogo, setSubredditLogo] = useState([])
   const [subRedditName, setSubRedditName] = useState('learnPython')
@@ -41,7 +46,7 @@ export const RedditProjectPage = () => {
 
   return (
     <div className='container'>
-      
+
 
       <h1 className='display-3 pt-5'>Reddit Top Post analysis</h1>
       <p className='lead'>Check the best time to post based when the top 500 posts of your choice where posted</p>
