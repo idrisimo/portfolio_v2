@@ -32,7 +32,7 @@ export const PortfolioPage = () => {
         backgroundPosition: 'center',
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
-        backgroundImage: `linear-gradient(to bottom, #212529 1%, rgba(0,0,0,0) 99%), url(${earthImage})`
+        backgroundImage: `linear-gradient(to bottom, #212529 10%, rgba(0,0,0,0) 75%, rgba(255,255,255,1) 99%), url(${earthImage})`
       }}>
 
       <ParallaxProvider>
